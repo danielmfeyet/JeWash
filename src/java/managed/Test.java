@@ -15,6 +15,7 @@ import SessionBean.AddressFacade;
 import SessionBean.ArticleFacade;
 import SessionBean.CustomerFacade;
 import SessionBean.SalesorderFacade;
+import java.io.IOException;
 import java.io.Serializable;
 import java.text.Format;
 import java.text.ParseException;
@@ -33,6 +34,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIComponent;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.servlet.http.HttpSession;
@@ -54,7 +56,6 @@ public class Test implements Serializable {
      */
     public Test() {
         this.ad = new Address();
-
         HttpSession hs = Util.getSession();
         login = (Customer) hs.getAttribute("customer");
     }
@@ -461,12 +462,10 @@ public String saveOrder(String datedate) throws ParseException
         order1Facade.create(order);
         return "Order.xhtml?faces-redirect=true";
     }
-public String logout(){
-    
-    HttpSession hs = Util.getSession();
-    hs.invalidate();
-        return "index";
-    
+public void logout() throws IOException {
+    ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+    ec.invalidateSession();
+    ec.redirect(ec.getRequestContextPath() + "/index.xhtml");
 }
 
       public void updateprofil(){
