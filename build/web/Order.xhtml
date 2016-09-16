@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>JeWash | Pressing à Domicile</title>
+        <link rel="stylesheet" href="bootstrap-3.3.6/dist/css/bootstrap.min.css"  />
+        <link rel="shortcut icon" type="image/png" href="JEWASH.png"/>
+        <link rel="stylesheet" href="bootstrap-3.3.6/dist/font-awesome-4.6.3/css/font-awesome.min.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"> </meta>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </h:head>
+    <h:body style="font-family:Arial">
+        <div class="row">
+            <div class="col-md-3 col-sm-3" style="background:#CEE3F6;height:100%">
+                <strong>
+                    <center><span style="color:blue;">JeWash (#{test.login.customerfirstname})</span></center>
+                    <center><img src="JEWASH.png" alt="Smiley face" height="120" width="120" /> </center>
+                    <br/>
+                    <ul class="nav nav-pills nav-stacked ">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+  <li role="presentation" class="active nav-justified"><a href="Order.xhtml"><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> RESERVER UN GROOM</a></li>
+  <li role="presentation"><a href="Adresse.xhtml"><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> ADRESSES</a></li>
+  <li role="presentation"><a href="#"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> MODE DE PAYEMENT</a></li>
+  <li role="presentation"><a href="PriceList.xhtml"><i class="glyphicon glyphicon-usd" aria-hidden="true"></i> TARIFS</a></li>
+  <li role="presentation" ><a href="Profile.xhtml"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> PROFIL</a></li>
+  <li role="presentation"><a href="#"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
+  <li role="presentation"><a href="#"><i class="glyphicon glyphicon-inbox" aria-hidden="true"></i> HISTORIQUE</a></li>
+  <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{test.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li>
+</ul>
+                </strong>
+            </div>
+            <div class="col-md-9 col-sm-9">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <strong>
+                            <h2>Réserver votre GROOM</h2>
+                            <h4>Le Groom se chargera de l'inventaire de vos vetements lors de ce rendez-vous</h4>
+                        </strong>
+                    </div>
+                    <h:form>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Récuperation</h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <strong>Adresse</strong>
+                                        <div class="dropdown">
+                                           
+                                            <p:selectOneMenu id="address" style="width: 200px"  value="#{test.order.addressid}" converter="#{test.addressConverter}"   required="true" requiredMessage="The Adress  field is required.">
+                                    <!-- TODO: update below reference to list of available items-->
+                                    <f:selectItems value="#{test.listofAddress}" var="item" itemLabel="#{item.addressname}" itemValue="#{item}"/>
+                                </p:selectOneMenu>
+                                        </div>
+                                        <br />
+                                    </div>
+                                    <div class="col-md-12">
+                                        <strong>Date</strong>
+                                        <div class="dropdown">
+                                            <p:selectOneMenu id="dateplanif" style="width: 200px" value="#{test.newdate}" >  
+             <p:ajax listener="#{test.onCountryChange()}" update="dateplanif1"/>
+            <p:ajax listener="#{test.onCountryChange1()}" update="grade"/>
+             <f:selectItems value="#{test.listdatestring}" var="da" itemValue="#{da}" itemLabel="#{da}" />  
+    </p:selectOneMenu>                         
+                                        </div>
+                                        <br/>                                       
+                                    </div>
+                                    <div class="col-md-12">
+                                        <strong>Heure</strong>
+                                        <div class="dropdown">
+                                            <p:selectOneMenu  id="grade" style="width: 200px" required="true" requiredMessage="choisir l'heure" value="#{test.daterecup}" >  
+             <f:selectItems value="#{test.ldaterecup}" var="li" itemValue="#{li}" itemLabel="#{li}" />         
+        </p:selectOneMenu>                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-md-pull-1 ">
+                                <h4>Livraison</h4>
+                                <div class="row">                                   
+                                    <div class="col-md-12">
+                                        	<strong>Adresse</strong>
+                                                <div class="dropdown">
+                                                    <p:selectOneMenu id="address1" style="width: 200px"  value="#{test.order.addAddressid}" converter="#{test.addressConverter}"  required="true" requiredMessage="The Adress  field is required.">
+                                    <!-- TODO: update below reference to list of available items-->
+                                    <f:selectItems value="#{test.listofAddress}" var="item2" itemLabel="#{item2.addressname}" itemValue="#{item2}"/>
+                                </p:selectOneMenu>                                                                                                   
+                                                </div>
+                                                <br />
+                                    </div>
+                                    <div class="col-md-12">
+                                        <strong>Date</strong>
+                                        <div class="dropdown">
+                                             <p:selectOneMenu id="dateplanif1" style="width: 200px"  value="#{test.newdate1}" >    
+             
+             <f:selectItems value="#{test.listdatestring1}" var="da" itemValue="#{da1}" itemLabel="#{da1}" />  
+    </p:selectOneMenu>  
+                                        </div>
+                                        <br/>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <strong>Heure</strong>
+                                        <div class="dropdown">
+                                            <p:selectOneMenu  id="grade1" style="width: 200px" requiredMessage="choisir une categorie" value="#{test.dateliv}" >  
+             <f:selectItems value="#{test.ldateliv}" var="liv" itemValue="#{liv}" itemLabel="#{liv}" />
+        </p:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3 col-xs-push-2 col-md-3 col-md-push-2 ">
+                          <p:commandButton value="Commander" styleClass="btn btn-md btn-primary btn-block"  style="background-color:#337ab7;" action="#{test.saveOrder(test.newdate)}" update="@form" />
+                            </div>
+                        </div>
+                    </div>
+</h:form>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

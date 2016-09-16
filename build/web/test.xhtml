@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+
+        <h:form>
+            <h2>Choix de l'equipe</h2>  
+            <h:outputLabel for="dateplanif" value="date de planification : " />
+            <p:selectOneMenu id="dateplanif"  value="#{test.newdate}" >  
+                <p:ajax listener="#{gestorder.onCountryChange()}" update="dateplanif1"/>
+
+                <f:selectItems value="#{gestorder.listdatestring}" var="da" itemValue="#{da}" itemLabel="#{da}" />  
+            </p:selectOneMenu>     
+
+            <h:outputLabel for="dateplanif1" value="date de planification1 : " />
+            <p:selectOneMenu id="dateplanif1"  value="#{gestorder.newdate1}" >    
+
+                <f:selectItems value="#{gestorder.listdatestring1}" var="da" itemValue="#{da1}" itemLabel="#{da1}" />  
+            </p:selectOneMenu>  
+            <br/>
+            <p:selectOneMenu  id="grade" requiredMessage="choisir une categorie" value="#{test.daterecup}" >  
+                <f:selectItems value="#{gestorder.ldaterecup}" var="li" itemValue="#{li}" itemLabel="#{li}" />
+
+            </p:selectOneMenu>
+            <hr/> 
+            <p:selectOneMenu  id="grade1" requiredMessage="choisir une categorie" value="#{test.dateliv}" >  
+                <f:selectItems value="#{gestorder.ldateliv}" var="liv" itemValue="#{liv}" itemLabel="#{liv}" />
+
+            </p:selectOneMenu>
+            <p:commandButton value="suivant"  style="color:black;" action="#{gestorder.gototest2(test.newdate)}" update="@form" />
+        </h:form>
+    </h:body>
+</html>
+
