@@ -11,14 +11,13 @@
         <link rel="stylesheet" href="bootstrap-3.3.6/dist/font-awesome-4.6.3/css/font-awesome.min.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1"> </meta>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta http-equiv="refresh" content="#{facesContext.externalContext.sessionMaxInactiveInterval};url=#{request.contextPath}/index.xhtml"/>
+      <meta http-equiv="refresh" content="#{facesContext.externalContext.sessionMaxInactiveInterval};url=#{request.contextPath}/index.xhtml"/>
     </h:head>
     <h:body style="font-family:Arial">
         <div class="row">
             <div class="col-md-3 col-sm-3" style="background:#CEE3F6;height:100%">
                 <strong>
-                    <center><span style="color:blue;">JeWash (#{test.login.customerfirstname})</span></center>
-                  
+                    <center><span style="color:blue;">JeWash (#{ordermanaged.login.customerfirstname})</span></center>
                     <center><img src="JEWASH.png" alt="Smiley face" height="120" width="120" /> </center>
                     <br/>
                     <ul class="nav nav-pills nav-stacked ">
@@ -35,7 +34,7 @@
   <li role="presentation" ><a href="Profile.xhtml"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> PROFIL</a></li>
   <li role="presentation"><a href="#"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
   <li role="presentation"><a href="#"><i class="glyphicon glyphicon-inbox" aria-hidden="true"></i> HISTORIQUE</a></li>
-  <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{test.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li>
+  <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{ordermanaged.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li>
 </ul>
                 </strong>
             </div>
@@ -57,30 +56,30 @@
                                         <strong>Adresse</strong>
                                         <div class="dropdown">
                                            
-                                            <p:selectOneMenu id="address" style="width: 200px"  value="#{test.order.addressid}" converter="#{test.addressConverter}"   required="true" requiredMessage="The Adress  field is required.">
+                                            <h:selectOneMenu  class="btn btn-default dropdown-toggle"  id="address" style="width: 200px"  value="#{ordermanaged.order.addressid}" converter="#{ordermanaged.addressConverter}"   required="true" requiredMessage="The Adress  field is required.">
                                     <!-- TODO: update below reference to list of available items-->
-                                    <f:selectItems value="#{test.listofAddress}" var="item" itemLabel="#{item.addressname}" itemValue="#{item}"/>
-                                </p:selectOneMenu>
+                                    <f:selectItems value="#{ordermanaged.listofAddress}" var="item" itemLabel="#{item.addressname}" itemValue="#{item}"/>
+                                </h:selectOneMenu>
                                         </div>
                                         <br />
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Date</strong>
                                         <div class="dropdown">
-                                            <p:selectOneMenu id="dateplanif" style="width: 200px" value="#{test.newdate}" >  
-             <p:ajax listener="#{test.onCountryChange()}" update="dateplanif1"/>
-            <p:ajax listener="#{test.onCountryChange1()}" update="grade"/>
-             <f:selectItems value="#{test.listdatestring}" var="da" itemValue="#{da}" itemLabel="#{da}" />  
-    </p:selectOneMenu>                         
+                                            <h:selectOneMenu id="dateplanif" class="btn btn-default dropdown-toggle" style="width: 200px" value="#{ordermanaged.newdate}" >  
+             <p:ajax listener="#{ordermanaged.onDateChange()}" update="dateplanif1"/>
+            <p:ajax listener="#{ordermanaged.onDateChange1()}" update="grade"/>
+             <f:selectItems value="#{ordermanaged.listdatestring}" var="da" itemValue="#{da}" itemLabel="#{da}" />  
+    </h:selectOneMenu>                         
                                         </div>
                                         <br/>                                       
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Heure</strong>
                                         <div class="dropdown">
-                                            <p:selectOneMenu  id="grade" style="width: 200px" required="true" requiredMessage="choisir l'heure" value="#{test.daterecup}" >  
-             <f:selectItems value="#{test.ldaterecup}" var="li" itemValue="#{li}" itemLabel="#{li}" />         
-        </p:selectOneMenu>                                          
+                                            <h:selectOneMenu  class="btn btn-default dropdown-toggle" id="grade" style="width: 200px" required="true" requiredMessage="choisir l'heure" value="#{ordermanaged.daterecup}" >  
+             <f:selectItems value="#{ordermanaged.ldaterecup}" var="li" itemValue="#{li}" itemLabel="#{li}" />         
+        </h:selectOneMenu>                                          
                                         </div>
                                     </div>
                                 </div>
@@ -91,29 +90,29 @@
                                     <div class="col-md-12">
                                         	<strong>Adresse</strong>
                                                 <div class="dropdown">
-                                                    <p:selectOneMenu id="address1" style="width: 200px"  value="#{test.order.addAddressid}" converter="#{test.addressConverter}"  required="true" requiredMessage="The Adress  field is required.">
+                                                    <h:selectOneMenu  class="btn btn-default dropdown-toggle" id="address1" style="width: 200px"  value="#{ordermanaged.order.addAddressid}" converter="#{ordermanaged.addressConverter}"  required="true" requiredMessage="The Adress  field is required.">
                                     <!-- TODO: update below reference to list of available items-->
-                                    <f:selectItems value="#{test.listofAddress}" var="item2" itemLabel="#{item2.addressname}" itemValue="#{item2}"/>
-                                </p:selectOneMenu>                                                                                                   
+                                    <f:selectItems value="#{ordermanaged.listofAddress}" var="item2" itemLabel="#{item2.addressname}" itemValue="#{item2}"/>
+                                </h:selectOneMenu>                                                                                                   
                                                 </div>
                                                 <br />
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Date</strong>
                                         <div class="dropdown">
-                                             <p:selectOneMenu id="dateplanif1" style="width: 200px"  value="#{test.newdate1}" >    
+                                             <h:selectOneMenu class="btn btn-default dropdown-toggle" id="dateplanif1" style="width: 200px"  value="#{ordermanaged.newdate1}" >    
              
-             <f:selectItems value="#{test.listdatestring1}" var="da" itemValue="#{da1}" itemLabel="#{da1}" />  
-    </p:selectOneMenu>  
+             <f:selectItems value="#{ordermanaged.listdatestring1}" var="da" itemValue="#{da1}" itemLabel="#{da1}" />  
+    </h:selectOneMenu>  
                                         </div>
                                         <br/>
                                     </div>
                                     <div class="col-md-12">
                                         <strong>Heure</strong>
                                         <div class="dropdown">
-                                            <p:selectOneMenu  id="grade1" style="width: 200px" requiredMessage="choisir une categorie" value="#{test.dateliv}" >  
-             <f:selectItems value="#{test.ldateliv}" var="liv" itemValue="#{liv}" itemLabel="#{liv}" />
-        </p:selectOneMenu>
+                                            <h:selectOneMenu class="btn btn-default dropdown-toggle" id="grade1" style="width: 200px" requiredMessage="choisir une categorie" value="#{ordermanaged.dateliv}" >  
+             <f:selectItems value="#{ordermanaged.ldateliv}" var="liv" itemValue="#{liv}" itemLabel="#{liv}" />
+        </h:selectOneMenu>
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +121,9 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-3 col-xs-push-2 col-md-3 col-md-push-2 ">
-                          <p:commandButton value="Commander" styleClass="btn btn-md btn-primary btn-block"  style="background-color:#337ab7;" action="#{test.saveOrder(test.newdate)}" update="@form" />
+                          <p:commandButton value="Commander" styleClass="btn btn-md btn-primary btn-block"  style="background-color:#337ab7;" action="#{ordermanaged.saveOrder(ordermanaged.newdate)}" update="@form" />
+                          
+                           
                             </div>
                         </div>
                     </div>

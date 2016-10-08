@@ -34,7 +34,7 @@
                         <li role="presentation" class="active nav-justified" ><a href="Profile.xhtml"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> PROFIL</a></li>
                         <li role="presentation"><a href="#"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
                         <li role="presentation"><a href="#"><i class="glyphicon glyphicon-inbox" aria-hidden="true"></i> HISTORIQUE</a></li>
-                       <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{test.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li> 
+                       <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{ordermanaged.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li> 
                     </ul>
                 </strong>
             </div>
@@ -55,14 +55,14 @@
                                             <div class="input-group">
                                                 <label for="userEmail" class="sr-only">Email de l'utilisateur</label>
                                                 <span class="input-group-addon" id="profile-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                                                <h:inputText  id="userEmail" value="#{test.login.customeremail}" class="form-control" p:placeholder="Recuperer l'EMAIL du user et mettre ici"  p:aria-describedby="profile-addon1"/>
+                                                <h:inputText  id="userEmail" value="#{ordermanaged.login.customeremail}" class="form-control" p:placeholder="Recuperer l'EMAIL du user et mettre ici"  p:aria-describedby="profile-addon1"/>
                                             </div><br />
                                         </div>
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <label for="userFirstname" class="sr-only">Prénom de l'utilisateur</label>
                                                 <span class="input-group-addon" id="profile-addon2"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                                                <h:inputText  id="userFirstname" value="#{test.login.customerfirstname}" class="form-control" p:placeholder="Recuperer le PRENOM du user et mettre ici"  p:aria-describedby="profile-addon2"/>
+                                                <h:inputText  id="userFirstname" value="#{ordermanaged.login.customerfirstname}" class="form-control" p:placeholder="Recuperer le PRENOM du user et mettre ici"  p:aria-describedby="profile-addon2"/>
 
                                             </div><br />
                                         </div>
@@ -70,13 +70,13 @@
                                             <div class="input-group">
                                                 <label for="userName" class="sr-only">Nom de l'utilisateur</label>
                                                 <span class="input-group-addon" id="profile-addon3"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                                                <h:inputText  id="userName" class="form-control" value="#{test.login.customername}" p:placeholder="Recuperer le NOM du user et mettre ici" p:aria-describedby="profile-addon3"/>
+                                                <h:inputText  id="userName" class="form-control" value="#{ordermanaged.login.customername}" p:placeholder="Recuperer le NOM du user et mettre ici" p:aria-describedby="profile-addon3"/>
 
                                             </div><br />
                                         </div>
                                         <div class="col-md-12">
                                             <div class="col-xs-8 col-xs-push-2 col-md-8 col-md-push-2 ">
-                                                                <h:commandLink class="btn btn-md btn-primary btn-block" action="#{test.updateprofil()}"> <i class="glyphicon glyphicon-repeat" aria-hidden="true"> </i> <strong>METTRE A JOUR</strong></h:commandLink>
+                                                                <h:commandLink class="btn btn-md btn-primary btn-block" action="#{ordermanaged.updateprofil()}"> <i class="glyphicon glyphicon-repeat" aria-hidden="true"> </i> <strong>METTRE A JOUR</strong></h:commandLink>
                                                                    
                                             </div>
                                         </div>
@@ -90,19 +90,19 @@
                                             <div class="input-group">
                                                 <label for="pass" class="sr-only">Mot de Passe Actuel</label>
                                                 <span class="input-group-addon" id="profile-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                                                <h:inputSecret id="pass" value="#{test.pdw}" class="form-control" p:placeholder="Mot de passe Actuel"  p:aria-describedby="profile-addon1"/>
+                                                <h:inputSecret id="pass" value="#{ordermanaged.pdw}" class="form-control" p:placeholder="Mot de passe Actuel"  p:aria-describedby="profile-addon1"/>
                                             </div><br />
                                         </div>
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <label for="pass1" class="sr-only">Nouveau mot de Passe</label>
                                                 <span class="input-group-addon" id="profile-addon2"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                                                <h:inputSecret id="pass1" value="#{test.pdw1}" class="form-control" p:placeholder="Nouveau mot de Passe"  p:aria-describedby="profile-addon2"/>
+                                                <h:inputSecret id="pass1" value="#{ordermanaged.pdw1}" class="form-control" p:placeholder="Nouveau mot de Passe"  p:aria-describedby="profile-addon2"/>
                                             </div> <br />
                                         </div>
                                         <div class="col-md-12">
                                             <div class="col-xs-8 col-xs-push-2 col-md-8 col-md-push-2 ">
-                                                <h:commandLink class="btn btn-md btn-primary btn-bloc" action="#{test.changePassword()}" ><strong>CHANGER MOT DE PASSE</strong></h:commandLink> 
+                                                <h:commandLink class="btn btn-md btn-primary btn-bloc" action="#{ordermanaged.changePassword()}" ><strong>CHANGER MOT DE PASSE</strong></h:commandLink> 
                                                 <br/>  <font color="red">    <h:messages></h:messages> </font>
                                             </div>
                                         </div>

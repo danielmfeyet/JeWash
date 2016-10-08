@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-3" style="background:#CEE3F6;height:100%">
                 <strong>
-                    <center><span style="color:blue;">JeWash (#{test.login.customerfirstname})</span></center>
+                    <center><span style="color:blue;">JeWash (#{ordermanaged.login.customerfirstname})</span></center>
                     <center><img src="JEWASH.png" alt="Smiley face" height="120" width="120" /> </center>
                     <br/>
                     <ul class="nav nav-pills nav-stacked ">
@@ -36,7 +36,7 @@
                         <li role="presentation" ><a href="Profile.xhtml"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> PROFIL</a></li>
                         <li role="presentation"><a href="#"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
                         <li role="presentation"><a href="#"><i class="glyphicon glyphicon-inbox" aria-hidden="true"></i> HISTORIQUE</a></li>
-                        <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{test.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li> </ul>
+                        <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{ordermanaged.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li> </ul>
                 </strong>   
             </div>
             <div class="col-md-9 col-sm-9">
@@ -72,7 +72,7 @@
 
                                                                     <label for="adressName" class="sr-only">Nom de l'adresse (Maison, Bureau,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon1"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputText  id="adressName" class="form-control" value="#{test.ad.addressname}" p:placeholder="Nom de l'adresse (Maison, Bureau,...)" required="true" ></h:inputText>
+                                                                    <h:inputText  id="adressName" class="form-control" value="#{ordermanaged.ad.addressname}" p:placeholder="Nom de l'adresse (Maison, Bureau,...)" required="true" ></h:inputText>
 
                                                                 </div>                     
                                                                 <br />
@@ -80,7 +80,7 @@
 
                                                                     <label for="adressCity" class="sr-only">Ville (Douala,Bafoussam,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon2"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputText  id="adressCity" value="#{test.ad.addresscity}" class="form-control" p:placeholder="Ville (Douala,Bafoussam,...)" required="true" />
+                                                                    <h:inputText  id="adressCity" value="#{ordermanaged.ad.addresscity}" class="form-control" p:placeholder="Ville (Douala,Bafoussam,...)" required="true" />
 
                                                                 </div>
                                                                 <br />
@@ -88,7 +88,7 @@
 
                                                                     <label for="adressNeighborhood" class="sr-only">Quartier (Akwa,Bonanjo,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon3"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputText  id="adressNeighborhood" value="#{test.ad.addressneighborhood}" class="form-control" p:placeholder="Quartier (Douala,Bafoussam,...)" required="true" ></h:inputText>
+                                                                    <h:inputText  id="adressNeighborhood" value="#{ordermanaged.ad.addressneighborhood}" class="form-control" p:placeholder="Quartier (Douala,Bafoussam,...)" required="true" ></h:inputText>
 
                                                                 </div>
                                                                 <br />
@@ -96,12 +96,12 @@
                                                                 <div class="input-group">
                                                                     <label for="adressNeighborhood" class="sr-only">Details Adresses (Akwa,Bonanjo,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon4"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputTextarea  rows="5" id="adressDetails" value="#{test.ad.addressdetail}" class="form-control" p:placeholder="Nom de rue, étage, ... Soyez le plus precis possible pour faciliter le travail de notre Groom" required="true" ></h:inputTextarea>
+                                                                    <h:inputTextarea  rows="5" id="adressDetails" value="#{ordermanaged.ad.addressdetail}" class="form-control" p:placeholder="Nom de rue, étage, ... Soyez le plus precis possible pour faciliter le travail de notre Groom" required="true" ></h:inputTextarea>
 
                                                                 </div>
                                                                 <div class="modal-footer">
-                                                                    <h:commandButton value="Plus Tard" class="btn btn-danger" action="#{test.nullAddress()}" />
-                                                                    <h:commandButton value="Enregistrer" styleClass="btn btn-primary" action="#{test.saveAddress()}" />
+                                                                    <h:commandButton value="Plus Tard" class="btn btn-danger" action="#{ordermanaged.nullAddress()}" />
+                                                                    <h:commandButton value="Enregistrer" styleClass="btn btn-primary" action="#{ordermanaged.saveAddress()}" />
 
                                                                 </div>    
                                                             </h:form>
@@ -122,7 +122,7 @@
 
                                                                     <label for="adressName" class="sr-only">Nom de l'adresse (Maison, Bureau,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon1"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputText  id="adressName" class="form-control" value="#{test.ad.addressname}" p:placeholder="Nom de l'adresse (Maison, Bureau,...)" required="true" ></h:inputText>
+                                                                    <h:inputText  id="adressName" class="form-control" value="#{ordermanaged.ad.addressname}" p:placeholder="Nom de l'adresse (Maison, Bureau,...)" required="true" ></h:inputText>
 
                                                                 </div>                     
                                                                 <br />
@@ -130,7 +130,7 @@
 
                                                                     <label for="adressCity" class="sr-only">Ville (Douala,Bafoussam,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon2"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputText  id="adressCity" value="#{test.ad.addresscity}" class="form-control" p:placeholder="Ville (Douala,Bafoussam,...)" required="true" />
+                                                                    <h:inputText  id="adressCity" value="#{ordermanaged.ad.addresscity}" class="form-control" p:placeholder="Ville (Douala,Bafoussam,...)" required="true" />
 
                                                                 </div>
                                                                 <br />
@@ -138,7 +138,7 @@
 
                                                                     <label for="adressNeighborhood" class="sr-only">Quartier (Akwa,Bonanjo,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon3"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputText  id="adressNeighborhood" value="#{test.ad.addressneighborhood}" class="form-control" p:placeholder="Quartier (Douala,Bafoussam,...)" required="true" ></h:inputText>
+                                                                    <h:inputText  id="adressNeighborhood" value="#{ordermanaged.ad.addressneighborhood}" class="form-control" p:placeholder="Quartier (Douala,Bafoussam,...)" required="true" ></h:inputText>
 
                                                                 </div>
                                                                 <br />
@@ -146,12 +146,12 @@
                                                                 <div class="input-group">
                                                                     <label for="adressNeighborhood" class="sr-only">Details Adresses (Akwa,Bonanjo,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon4"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputTextarea  rows="5" id="adressDetails" value="#{test.ad.addressdetail}" class="form-control" p:placeholder="Nom de rue, étage, ... Soyez le plus precis possible pour faciliter le travail de notre Groom" required="true" ></h:inputTextarea>
+                                                                    <h:inputTextarea  rows="5" id="adressDetails" value="#{ordermanaged.ad.addressdetail}" class="form-control" p:placeholder="Nom de rue, étage, ... Soyez le plus precis possible pour faciliter le travail de notre Groom" required="true" ></h:inputTextarea>
 
                                                                 </div>
                                                                 <div class="modal-footer">
-                                                                    <h:commandButton value="Plus Tard" class="btn btn-danger" action="#{test.nullAddress()}" />
-                                                                    <h:commandButton value="Modifier" class="btn btn-primary" action="#{test.editAddress()}" />
+                                                                    <h:commandButton value="Plus Tard" class="btn btn-danger" action="#{ordermanaged.nullAddress()}" />
+                                                                    <h:commandButton value="Modifier" class="btn btn-primary" action="#{ordermanaged.editAddress()}" />
 
                                                                 </div>    
                                                             </h:form>
@@ -182,7 +182,7 @@
 
                                                                     <label for="adressName" class="sr-only">Nom de l'adresse (Maison, Bureau,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon1"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputText  id="adressName" readonly="true" class="form-control" value="#{test.ad.addressname}" p:placeholder="Nom de l'adresse (Maison, Bureau,...)" required="true" ></h:inputText>
+                                                                    <h:inputText  id="adressName" readonly="true" class="form-control" value="#{ordermanaged.ad.addressname}" p:placeholder="Nom de l'adresse (Maison, Bureau,...)" required="true" ></h:inputText>
 
                                                                 </div>                     
                                                                 <br />
@@ -190,7 +190,7 @@
 
                                                                     <label for="adressCity" class="sr-only">Ville (Douala,Bafoussam,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon2"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputText  id="adressCity" readonly="true" value="#{test.ad.addresscity}" class="form-control" p:placeholder="Ville (Douala,Bafoussam,...)" required="true" />
+                                                                    <h:inputText  id="adressCity" readonly="true" value="#{ordermanaged.ad.addresscity}" class="form-control" p:placeholder="Ville (Douala,Bafoussam,...)" required="true" />
 
                                                                 </div>
                                                                 <br />
@@ -198,7 +198,7 @@
 
                                                                     <label for="adressNeighborhood" class="sr-only">Quartier (Akwa,Bonanjo,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon3"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputText  id="adressNeighborhood" readonly="true" value="#{test.ad.addressneighborhood}" class="form-control" p:placeholder="Quartier (Douala,Bafoussam,...)" required="true" ></h:inputText>
+                                                                    <h:inputText  id="adressNeighborhood" readonly="true" value="#{ordermanaged.ad.addressneighborhood}" class="form-control" p:placeholder="Quartier (Douala,Bafoussam,...)" required="true" ></h:inputText>
 
                                                                 </div>
                                                                 <br />
@@ -206,12 +206,12 @@
                                                                 <div class="input-group">
                                                                     <label for="adressNeighborhood" class="sr-only">Details Adresses (Akwa,Bonanjo,...)</label>
                                                                     <span class="input-group-addon" id="adressAdd-addon4"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
-                                                                    <h:inputTextarea  rows="5" id="adressDetails" readonly="true" value="#{test.ad.addressdetail}" class="form-control" p:placeholder="Nom de rue, étage, ... Soyez le plus precis possible pour faciliter le travail de notre Groom" required="true" ></h:inputTextarea>
+                                                                    <h:inputTextarea  rows="5" id="adressDetails" readonly="true" value="#{ordermanaged.ad.addressdetail}" class="form-control" p:placeholder="Nom de rue, étage, ... Soyez le plus precis possible pour faciliter le travail de notre Groom" required="true" ></h:inputTextarea>
 
                                                                 </div>
                                                                 <div class="modal-footer">
-                                                                    <h:commandButton value="Plus Tard" class="btn btn-danger" action="#{test.nullAddress()}"/>
-                                                                    <h:commandButton value="Supprimer" action="#{test.deleteAddress()}"    class="btn btn-primary" />
+                                                                    <h:commandButton value="Plus Tard" class="btn btn-danger" action="#{ordermanaged.nullAddress()}"/>
+                                                                    <h:commandButton value="Supprimer" action="#{ordermanaged.deleteAddress()}"    class="btn btn-primary" />
 
                                                                 </div>    
                                                             </h:form>
@@ -224,7 +224,7 @@
                                 </div>
                                 <!-- Table -->
                                 <h:form>
-                                    <h:dataTable class="table" style="background:RGB(52,73,94);color:white" value="#{test.listofAddress}" var="o">
+                                    <h:dataTable class="table" style="background:RGB(52,73,94);color:white" value="#{ordermanaged.listofAddress}" var="o">
 
                                         <h:column>
                                             <!-- column header -->
@@ -248,10 +248,10 @@
                                             <!-- column header -->
                                             <f:facet name="header">ACTION</f:facet>
                                             <!-- row record -->
-                                            <h:commandLink  class="btn btn-primary"  onclick="$('#addAdressModal2').modal('show');" immediate="true"   action="#{test.showAddress(o.addressname,o.addresscity,o.addressneighborhood,o.addressdetail,o.addressid)}"  ><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
+                                            <h:commandLink  class="btn btn-primary"  onclick="$('#addAdressModal2').modal('show');" immediate="true"   action="#{ordermanaged.showAddress(o.addressname,o.addresscity,o.addressneighborhood,o.addressdetail,o.addressid)}"  ><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>
                                                 <f:ajax execute="@this" render=":myForm"/>
                                             </h:commandLink> 
-                                            <h:commandLink   action="#{test.showAddress(o.addressname,o.addresscity,o.addressneighborhood,o.addressdetail,o.addressid)}" onclick="$('#addAdressModal3').modal('show');" immediate="true"  class="btn btn-primary" title="Supprimer l'adresse"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
+                                            <h:commandLink   action="#{ordermanaged.showAddress(o.addressname,o.addresscity,o.addressneighborhood,o.addressdetail,o.addressid)}" onclick="$('#addAdressModal3').modal('show');" immediate="true"  class="btn btn-primary" title="Supprimer l'adresse"><i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
                                              <f:ajax execute="@this" render=":myForm1"/>                                            
                                             </h:commandLink >
                                         </h:column>

@@ -28,7 +28,7 @@
   <li role="presentation" ><a href="Profile.xhtml"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> PROFIL</a></li>
   <li role="presentation"><a href="#"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
   <li role="presentation"><a href="#"><i class="glyphicon glyphicon-inbox" aria-hidden="true"></i> HISTORIQUE</a></li>
-  <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{test.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li></ul>
+  <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{ordermanaged.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li></ul>
                 </strong>
             </div>
             <div class="col-md-9 col-sm-9">
@@ -50,7 +50,7 @@
     <p><span style="color:#EDBE00;font-size:small;font-weight:bold">LAVAGE - SECHAGE - REPASSAGE</span><br/><span style="color:white;font-size:x-small"></span></p>
   </div>
                                      <!-- Table -->
-                                     <h:dataTable class="table" style="background:RGB(52,73,94);color:white" value="#{test.listofArticle}" var="o">
+                                     <h:dataTable class="table" style="background:RGB(52,73,94);color:white" value="#{ordermanaged.listofArticle}" var="o">
 	 <h:column>
                                             <!-- column header -->
                                             <!-- row record -->

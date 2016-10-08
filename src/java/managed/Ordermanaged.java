@@ -21,6 +21,7 @@ import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -30,11 +31,13 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.component.UIComponent;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
+import javax.faces.event.ValueChangeEvent;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -43,7 +46,7 @@ import javax.servlet.http.HttpSession;
  */
 @ManagedBean
 @SessionScoped
-public class Test implements Serializable {
+public class Ordermanaged implements Serializable {
     @EJB
     private ArticleFacade articleFacade;
     @EJB
@@ -52,7 +55,7 @@ public class Test implements Serializable {
     /**
      * Creates a new instance of Test
      */
-    public Test() {
+    public Ordermanaged() {
         this.ad = new Address();
         HttpSession hs = Util.getSession();
         login = (Customer) hs.getAttribute("customer");
@@ -408,7 +411,7 @@ public class Test implements Serializable {
         this.dateplanification = dateplanification;
     }
 
-    public void onCountryChange() throws ParseException {
+    public void onDateChange() throws ParseException {
 
         if (newdate != null) {
             Date f = new SimpleDateFormat("EEEE dd MMM yyyy").parse(newdate);
@@ -431,7 +434,9 @@ public class Test implements Serializable {
 
         }
     }
-     public void onCountryChange1() throws ParseException  {
+    
+         
+     public void onDateChange1() throws ParseException  {
                 ldaterecup.clear();
         dateplanification= new SimpleDateFormat("EEEE dd MMM yyyy", Locale.getDefault()).parse(newdate);
             if (new Date().getHours() < 16) {
