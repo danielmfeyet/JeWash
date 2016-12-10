@@ -23,10 +23,10 @@
                         <ul class="nav nav-pills nav-stacked ">
   <li role="presentation" ><a href="Order.xhtml"><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> RESERVER UN GROOM</a></li>
   <li role="presentation"><a href="Adresse.xhtml"><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> ADRESSES</a></li>
-  <li role="presentation"><a href="#"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> MODE DE PAYEMENT</a></li>
+  <li role="presentation"><a href="paymentmode.xhtml"><i class="glyphicon glyphicon-credit-card" aria-hidden="true"></i> MODE DE PAYEMENT</a></li>
   <li role="presentation" class="active nav-justified"><a href="PriceList.xhtml"><i class="glyphicon glyphicon-usd" aria-hidden="true"></i> TARIFS</a></li>
   <li role="presentation" ><a href="Profile.xhtml"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> PROFIL</a></li>
-  <li role="presentation"><a href="#"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
+  <li role="presentation"><a href="preferences.xhtml"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
   <li role="presentation"><a href="#"><i class="glyphicon glyphicon-inbox" aria-hidden="true"></i> HISTORIQUE</a></li>
   <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{ordermanaged.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li></ul>
                 </strong>
@@ -47,7 +47,7 @@
                                     <!-- Default panel contents -->
                                     <div class="panel-heading" style="background:RGB(52,73,94);color:white"><strong>PRESSING</strong></div>
                                     <div class="panel-body" style="background:RGB(52,73,94)">
-    <p><span style="color:#EDBE00;font-size:small;font-weight:bold">LAVAGE - SECHAGE - REPASSAGE</span><br/><span style="color:white;font-size:x-small"></span></p>
+    <p><span style="color:#EDBE00;font-size:small;font-weight:bold">NETTOYAGE - SECHAGE - REPASSAGE</span><br/><span style="color:white;font-size:x-small"></span></p>
   </div>
                                      <!-- Table -->
                                      <h:dataTable class="table" style="background:RGB(52,73,94);color:white" value="#{ordermanaged.listofArticle}" var="o">

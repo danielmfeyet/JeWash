@@ -51,7 +51,7 @@ public class Ordermanaged implements Serializable {
     private ArticleFacade articleFacade;
     @EJB
     private CustomerFacade customerFacade;
-
+ 
     /**
      * Creates a new instance of Test
      */

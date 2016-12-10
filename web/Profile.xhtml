@@ -29,21 +29,21 @@
                         </button>
                         <li role="presentation" ><a href="Order.xhtml"><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> RESERVER UN GROOM</a></li>
                         <li role="presentation"><a href="Adresse.xhtml"><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> ADRESSES</a></li>
-                        <li role="presentation"><a href="#"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> MODE DE PAYEMENT</a></li>
+                        <li role="presentation"><a href="paymentmode.xhtml"><i class="glyphicon glyphicon-credit-card" aria-hidden="true"></i> MODE DE PAYEMENT</a></li>
                         <li role="presentation"><a href="PriceList.xhtml"><i class="glyphicon glyphicon-usd" aria-hidden="true"></i> TARIFS</a></li>
                         <li role="presentation" class="active nav-justified" ><a href="Profile.xhtml"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> PROFIL</a></li>
-                        <li role="presentation"><a href="#"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
+                        <li role="presentation"><a href="preferences.xhtml"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
                         <li role="presentation"><a href="#"><i class="glyphicon glyphicon-inbox" aria-hidden="true"></i> HISTORIQUE</a></li>
                        <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{ordermanaged.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li> 
                     </ul>
                 </strong>
             </div>
             <div class="col-md-9 col-sm-9">
-                <div class="row">
+                 <div class="row">
                     <div class="col-md-12 ">
                         <strong>
                             <h2>Vos Informations</h2>
-                            <h4>Modifier vos informations personeles ou votre mot de passe</h4>
+                            <h4>Modifier vos informations personelles ou votre mot de passe</h4>
                         </strong>
                     </div>
                     <div class="col-md-12">
@@ -55,22 +55,21 @@
                                             <div class="input-group">
                                                 <label for="userEmail" class="sr-only">Email de l'utilisateur</label>
                                                 <span class="input-group-addon" id="profile-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                                                <h:inputText  id="userEmail" value="#{ordermanaged.login.customeremail}" class="form-control" p:placeholder="Recuperer l'EMAIL du user et mettre ici"  p:aria-describedby="profile-addon1"/>
+                                                <h:inputText  id="userEmail" value="#{ordermanaged.login.customeremail}" class="form-control" p:placeholder="Votre email ici. ex: pierre@gmail.com"  p:aria-describedby="profile-addon1"/>
                                             </div><br />
                                         </div>
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <label for="userFirstname" class="sr-only">Prénom de l'utilisateur</label>
-                                                <span class="input-group-addon" id="profile-addon2"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                                                <h:inputText  id="userFirstname" value="#{ordermanaged.login.customerfirstname}" class="form-control" p:placeholder="Recuperer le PRENOM du user et mettre ici"  p:aria-describedby="profile-addon2"/>
-
+                                                <span class="input-group-addon" id="profile-addon2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                                <h:inputText  id="userFirstname" value="#{ordermanaged.login.customerfirstname}" class="form-control" p:placeholder="Votre prénom ici. ex: Pierre"  p:aria-describedby="profile-addon2"/>
                                             </div><br />
                                         </div>
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <label for="userName" class="sr-only">Nom de l'utilisateur</label>
-                                                <span class="input-group-addon" id="profile-addon3"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
-                                                <h:inputText  id="userName" class="form-control" value="#{ordermanaged.login.customername}" p:placeholder="Recuperer le NOM du user et mettre ici" p:aria-describedby="profile-addon3"/>
+                                                <span class="input-group-addon" id="profile-addon3"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                                <h:inputText  id="userName" class="form-control" value="#{ordermanaged.login.customername}" p:placeholder="Votre nom ici. ex: Toto" p:aria-describedby="profile-addon3"/>
 
                                             </div><br />
                                         </div>
@@ -89,14 +88,14 @@
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <label for="pass" class="sr-only">Mot de Passe Actuel</label>
-                                                <span class="input-group-addon" id="profile-addon1"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                                                <span class="input-group-addon" id="profile-addon1"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
                                                 <h:inputSecret id="pass" value="#{ordermanaged.pdw}" class="form-control" p:placeholder="Mot de passe Actuel"  p:aria-describedby="profile-addon1"/>
                                             </div><br />
                                         </div>
                                         <div class="col-md-12">
                                             <div class="input-group">
                                                 <label for="pass1" class="sr-only">Nouveau mot de Passe</label>
-                                                <span class="input-group-addon" id="profile-addon2"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                                                <span class="input-group-addon" id="profile-addon2"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
                                                 <h:inputSecret id="pass1" value="#{ordermanaged.pdw1}" class="form-control" p:placeholder="Nouveau mot de Passe"  p:aria-describedby="profile-addon2"/>
                                             </div> <br />
                                         </div>

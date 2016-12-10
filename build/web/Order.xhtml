@@ -15,7 +15,7 @@
     </h:head>
     <h:body style="font-family:Arial">
         <div class="row">
-            <div class="col-md-3 col-sm-3" style="background:#CEE3F6;height:100%">
+            <div class="navbar col-md-3 col-sm-3" style="background:#CEE3F6;height:100%">
                 <strong>
                     <center><span style="color:blue;">JeWash (#{ordermanaged.login.customerfirstname})</span></center>
                     <center><img src="JEWASH.png" alt="Smiley face" height="120" width="120" /> </center>
@@ -29,16 +29,16 @@
             </button>
   <li role="presentation" class="active nav-justified"><a href="Order.xhtml"><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> RESERVER UN GROOM</a></li>
   <li role="presentation"><a href="Adresse.xhtml"><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> ADRESSES</a></li>
-  <li role="presentation"><a href="#"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> MODE DE PAYEMENT</a></li>
+  <li role="presentation"><a href="paymentmode.xhtml"><i class="glyphicon glyphicon-credit-card" aria-hidden="true"></i> MODE DE PAYEMENT</a></li>
   <li role="presentation"><a href="PriceList.xhtml"><i class="glyphicon glyphicon-usd" aria-hidden="true"></i> TARIFS</a></li>
   <li role="presentation" ><a href="Profile.xhtml"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> PROFIL</a></li>
-  <li role="presentation"><a href="#"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
+  <li role="presentation"><a href="preferences.xhtml"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
   <li role="presentation"><a href="#"><i class="glyphicon glyphicon-inbox" aria-hidden="true"></i> HISTORIQUE</a></li>
   <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{ordermanaged.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li>
 </ul>
                 </strong>
             </div>
-            <div class="col-md-9 col-sm-9">
+            <div class="col-md-9 col-sm-9 col-xs-12">
                 <div class="row">
                     <div class="col-md-12 ">
                         <strong>
@@ -47,9 +47,9 @@
                         </strong>
                     </div>
                     <h:form>
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
                                 <h4>Récuperation</h4>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -77,7 +77,7 @@
                                     <div class="col-md-12">
                                         <strong>Heure</strong>
                                         <div class="dropdown">
-                                            <h:selectOneMenu  class="btn btn-default dropdown-toggle" id="grade" style="width: 200px" required="true" requiredMessage="choisir l'heure" value="#{ordermanaged.daterecup}" >  
+                                            <h:selectOneMenu  class="btn btn-default dropdown-toggle" id="grade" style="width: 200px" required="true" requiredMessage="Choisir l'heure de ramassage" value="#{ordermanaged.daterecup}" >  
              <f:selectItems value="#{ordermanaged.ldaterecup}" var="li" itemValue="#{li}" itemLabel="#{li}" />         
         </h:selectOneMenu>                                          
                                         </div>
@@ -110,7 +110,7 @@
                                     <div class="col-md-12">
                                         <strong>Heure</strong>
                                         <div class="dropdown">
-                                            <h:selectOneMenu class="btn btn-default dropdown-toggle" id="grade1" style="width: 200px" requiredMessage="choisir une categorie" value="#{ordermanaged.dateliv}" >  
+                                            <h:selectOneMenu class="btn btn-default dropdown-toggle" id="grade1" style="width: 200px" requiredMessage="The Adress  field is required." value="#{ordermanaged.dateliv}" >  
              <f:selectItems value="#{ordermanaged.ldateliv}" var="liv" itemValue="#{liv}" itemLabel="#{liv}" />
         </h:selectOneMenu>
                                         </div>
@@ -121,9 +121,7 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-3 col-xs-push-2 col-md-3 col-md-push-2 ">
-                          <p:commandButton value="Commander" styleClass="btn btn-md btn-primary btn-block"  style="background-color:#337ab7;" action="#{ordermanaged.saveOrder(ordermanaged.newdate)}" update="@form" />
-                          
-                           
+                          <p:commandButton value="Commander" styleClass="btn btn-md btn-primary btn-block"  style="background-color:#337ab7;" action="#{ordermanaged.saveOrder(ordermanaged.newdate)}" update="@form" />  
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>JeWash | Pressing à Domicile</title>
+        <link rel="stylesheet" href="bootstrap-3.3.6/dist/css/bootstrap.min.css"  />
+        <link rel="stylesheet" href="bootstrap-3.3.6/dist/js/bootstrap.min.js"  />
+        <link rel="shortcut icon" type="image/png" href="JEWASH.png"/>
+        <link rel="stylesheet" href="bootstrap-3.3.6/dist/font-awesome-4.6.3/css/font-awesome.min.css"  />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="refresh" content="#{facesContext.externalContext.sessionMaxInactiveInterval};url=#{request.contextPath}/index.xhtml"/>
+    </h:head>
+    <h:body style="font-family:Arial">
+        <div class="row">
+            <div class="col-md-3 col-sm-3" style="background:#CEE3F6;height:100%">
+                <strong>
+                    <center><span style="color:blue;">JeWash</span></center>
+                    <center><img src="JEWASH.png" alt="Smiley face" height="120" width="120" /> </center>
+                    <br />
+                    <ul class="nav nav-pills nav-stacked ">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <li role="presentation" ><a href="Order.xhtml"><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> RESERVER UN GROOM</a></li>
+                        <li role="presentation"><a href="Adresse.xhtml"><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i> ADRESSES</a></li>
+                        <li role="presentation"><a href="paymentmode.xhtml"><i class="glyphicon glyphicon-credit-card" aria-hidden="true"></i> MODE DE PAYEMENT</a></li>
+                        <li role="presentation"><a href="PriceList.xhtml"><i class="glyphicon glyphicon-usd" aria-hidden="true"></i> TARIFS</a></li>
+                        <li role="presentation" ><a href="Profile.xhtml"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> PROFIL</a></li>
+                        <li role="presentation" class="active nav-justified" ><a href="preferences.xhtml"><i class="glyphicon glyphicon-cog" aria-hidden="true"></i> PREFERENCES</a></li>
+                        <li role="presentation"><a href="#"><i class="glyphicon glyphicon-inbox" aria-hidden="true"></i> HISTORIQUE</a></li>
+                       <li role="presentation">   <h:form><h:commandLink style="margin-left: 14px" action="#{ordermanaged.logout()}" ><i class="glyphicon glyphicon-off" aria-hidden="true"></i> DECONNEXION</h:commandLink>  </h:form></li> 
+                    </ul>
+                </strong>
+            </div>
+            <div class="col-md-9 col-sm-9">
+                 <div class="row">
+                    <div class="col-md-12 ">
+                        <strong>
+                            <h2>Préférences </h2>
+                            <h4> Faites de JeWash ce que vous voulez </h4>
+                        </strong>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <h:form class="form">   
+                                        <div class="col-md-12">
+                                            <div class="checkbox">
+  <label><input type="checkbox" value="" />En cas d'absence, laisser la commande à la porte , au concierge ou à la personne que vous trouverez chez moi</label>
+</div>
+<div class="checkbox">
+  <label><input type="checkbox" value="" />Chuuuut, bébé dort ! Ne jamais sonner, me téléphoner</label>
+</div>
+                                        </div>
+                                   </h:form>  
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </h:body>
+</html>
+
