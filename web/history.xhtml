@@ -15,6 +15,12 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta http-equiv="refresh" content="#{facesContext.externalContext.sessionMaxInactiveInterval};url=#{request.contextPath}/index.xhtml"/>
     </h:head>
+    <style>
+       body {font-size:13px;
+       font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
+       color: #6a6c6f ;} 
+        
+    </style>
     <h:body  style="font-family:Arial">
         <div class="row">
             <div class="col-md-3 col-sm-3" style="background:#CEE3F6;height:100%">
@@ -50,6 +56,55 @@
                     <div class="col-md-12">
 
                         <div class="row">
+                                  <!-- Modal -->
+                                            <div class="modal fade"  id="viewdetail" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content" style="background:RGB(52,73,94);color:white">
+                                                        <div class="modal-header">
+                                                            <button type="button"  class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title"> Détail de la commande </h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <h:form class="form-signin">
+                                                                <div class="input-group">
+
+                                                                    <label for="adressName" class="sr-only">Nom de l'adresse (Maison, Bureau,...)</label>
+                                                                    <span class="input-group-addon" id="adressAdd-addon1"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"> Adresse de Collecte</span></span>
+                                                                    <h:inputText  id="adressName" class="form-control" value="#{ordermanaged.ad.addressname}" p:placeholder="Nom de l'adresse (Maison, Bureau,...)" required="true" ></h:inputText>
+
+                                                                </div>                     
+                                                                <br />
+                                                                <div class="input-group">
+
+                                                                    <label for="adressCity" class="sr-only">Ville (Douala,Bafoussam,...)</label>
+                                                                    <span class="input-group-addon" id="adressAdd-addon2"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
+                                                                    <h:inputText  id="adressCity" value="#{ordermanaged.ad.addresscity}" class="form-control" p:placeholder="Ville (Douala,Bafoussam,...)" required="true" />
+
+                                                                </div>
+                                                                <br />
+                                                                <div class="input-group">
+
+                                                                    <label for="adressNeighborhood" class="sr-only">Quartier (Akwa,Bonanjo,...)</label>
+                                                                    <span class="input-group-addon" id="adressAdd-addon3"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
+                                                                    <h:inputText  id="adressNeighborhood" value="#{ordermanaged.ad.addressneighborhood}" class="form-control" p:placeholder="Quartier (Douala,Bafoussam,...)" required="true" ></h:inputText>
+
+                                                                </div>
+                                                                <br />
+
+                                                                <div class="input-group">
+                                                                    <label for="adressNeighborhood" class="sr-only">Details Adresses (Akwa,Bonanjo,...)</label>
+                                                                    <span class="input-group-addon" id="adressAdd-addon4"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></span>
+                                                                    <h:inputTextarea  rows="5" id="adressDetails" value="#{ordermanaged.ad.addressdetail}" class="form-control" p:placeholder="Nom de rue, étage, ... Soyez le plus precis possible pour faciliter le travail de notre Groom" required="true" ></h:inputTextarea>
+
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <h:commandButton value="Fermer" class="btn btn-danger" action="#{ordermanaged.nullAddress()}" />
+                                                                </div>    
+                                                            </h:form>
+                                                        </div>     
+                                                    </div>
+                                                </div>
+                                            </div>
                             <div class="col-md-12">
                                 <!-- Table -->
                                 <h:form>
@@ -57,13 +112,13 @@
 
                                         <h:column>
                                             <!-- column header -->
-                                            <f:facet name="header">Date PickUp</f:facet>
+                                            <f:facet name="header">Date de Collecte</f:facet>
                                             <!-- row record -->
                                             #{o.addressname}
                                         </h:column>
                                         <h:column>
                                             <!-- column header -->
-                                            <f:facet name="header">Adresse PickUp</f:facet>
+                                            <f:facet name="header">Adresse Collecte</f:facet>
                                             <!-- row record -->
                                             #{o.addresscity}
                                         </h:column>
@@ -75,7 +130,13 @@
                                         </h:column>
                                         <h:column>
                                             <!-- column header --> <!-- Valeurs possibles statut : Ouvert, Pick, Pressing , Pret , Livré -->
-                                            <f:facet name="header">Statut</f:facet>
+                                            <f:facet name="header">Statut Linge</f:facet>
+                                            <!-- row record -->
+                                            #{o.addressneighborhood}
+                                        </h:column>
+                                        <h:column>
+                                            <!-- column header --> <!-- Valeurs possibles statut : Payé , Non Payé -->
+                                            <f:facet name="header">Payement</f:facet>
                                             <!-- row record -->
                                             #{o.addressneighborhood}
                                         </h:column>
@@ -83,7 +144,7 @@
                                             <!-- column header -->
                                             <f:facet name="header">Statut</f:facet>
                                             <!-- row record -->
-                                            <h:commandLink  class="btn btn-primary"  onclick="$('#addAdressModal2').modal('show');" immediate="true"   action="#{ordermanaged.showAddress(o.addressname,o.addresscity,o.addressneighborhood,o.addressdetail,o.addressid)}"  ><i class="glyphicon glyphicon-new-window" aria-hidden="true"></i>
+                                            <h:commandLink  class="btn btn-primary"  onclick="$('#viewdetail').modal('show');" immediate="true"   action="#{ordermanaged.showAddress(o.addressname,o.addresscity,o.addressneighborhood,o.addressdetail,o.addressid)}"  ><i class="glyphicon glyphicon-new-window" aria-hidden="true"></i>
                                                 <f:ajax execute="@this" render=":myForm"/>
                                             </h:commandLink> 
                                         </h:column>
